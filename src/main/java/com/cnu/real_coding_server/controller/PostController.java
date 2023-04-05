@@ -14,7 +14,6 @@ import java.util.List;
 @RequiredArgsConstructor
 public class PostController {
     private final PostService postService;
-
     @PostMapping
     public ResponseEntity<Post> createPost(@RequestBody PostRequest postRequest /* request body required */) {
         // postRequest body required

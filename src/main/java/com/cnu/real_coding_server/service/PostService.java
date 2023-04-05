@@ -1,8 +1,11 @@
 package com.cnu.real_coding_server.service;
 
 import com.cnu.real_coding_server.entity.Post;
+import com.cnu.real_coding_server.entity.Project;
 import com.cnu.real_coding_server.model.request.PostRequest;
+import com.cnu.real_coding_server.model.request.ProjectRequest;
 import com.cnu.real_coding_server.repository.PostRepository;
+import com.cnu.real_coding_server.repository.ProjectRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,10 +17,12 @@ import java.util.Optional;
 @Service
 public class PostService {
     private final PostRepository postRepository; // 생성되는 postRepository 를 가지고 있을 것
+
     public Post createPost(PostRequest postRequest) {
         return postRepository.save(postRequest.toEntity());
     }
-    public List<Post> getPosts(){
+
+    public List<Post> getPosts() {
         return postRepository.findAll();
     }
 
