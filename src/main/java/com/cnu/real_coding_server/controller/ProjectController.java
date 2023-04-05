@@ -11,11 +11,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/posts")
+@RequestMapping("/projects") // resources are always in plural.
 @RequiredArgsConstructor
 public class ProjectController {
     private final ProjectService projectService;
-
+    
+    // Projects management
     @PostMapping
     public ResponseEntity<Project> createProject(@RequestBody ProjectRequest projectRequest) {
         // projectRequest body required
