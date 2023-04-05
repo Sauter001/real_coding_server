@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 public class ProjectController {
     private final ProjectService projectService;
-    
+
     // Projects management
     @PostMapping
     public ResponseEntity<Project> createProject(@RequestBody ProjectRequest projectRequest) {
